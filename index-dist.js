@@ -21,6 +21,46 @@ var internalModule = function internalModule() {
 };
 /* harmony default export */ __webpack_exports__["default"] = (internalModule);
 
+/***/ }),
+/* 3 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+var videoFilterSlider = function videoFilterSlider() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var videoFilterSliderElement = document.querySelector('.video-filter-slider');
+    var videoFilterSliderInstance = null;
+    var initializeSlider = function initializeSlider() {
+      if (window.innerWidth < 1024 && !videoFilterSliderInstance) {
+        videoFilterSliderInstance = new Swiper('.video-filter-slider', {
+          direction: 'horizontal',
+          loop: false,
+          allowThresholdMove: true,
+          slidesPerView: 'auto',
+          spaceBetween: 7,
+          a11y: {
+            enabled: true,
+            slideLabelMessage: "Slide {{index}} of {{slidesLength}}",
+            slideRole: null // Custom role for slide
+          }
+        });
+      } else if (window.innerWidth >= 1024 && videoFilterSliderInstance) {
+        videoFilterSliderInstance.destroy(true, true);
+        videoFilterSliderInstance = null;
+      }
+    };
+
+    // Initialize slider on load
+    initializeSlider();
+
+    // Reinitialize slider on window resize
+    window.addEventListener('resize', function () {
+      initializeSlider();
+    });
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (videoFilterSlider);
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -67,25 +107,23 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /*here start core layout ui scripts imports*/
 
 /*here finish core layout ui scripts imports*/
 
 /*here start internal layout ui components scripts imports*/
 
+
 /*here finish internal layout ui components scripts imports*/
 
 (function () {
   /*here start core layout ui scripts functions*/
   (0,_core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__["default"])();
   /*here finish core layout ui scripts functions*/
 })();
-
-(function () {
-  /*here start internal layout ui components scripts functions*/
-  (0,_internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  /*here start internal layout ui components scripts functions*/
-})();
+(function () {})();
 }();
 /******/ })()
 ;
