@@ -496,11 +496,6 @@ ul li {
   width: 100%;
   padding: 15px;
 }
-@media screen and (min-width: 1024px) {
-  .video-filter__content {
-    margin-left: 19px;
-  }
-}
 .video-filter__content-title {
   color: var(--Color-Alias-Text-Primary, #192666);
   /* Desktop/Heading/Heading2 */
