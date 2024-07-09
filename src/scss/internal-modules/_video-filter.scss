@@ -1,1 +1,116 @@
-.video-filter{}
+.video-filter{
+	padding-top: 160px;
+	border: 1px solid red;
+	width: 100%;
+	max-width: 1620px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	@include from(1024px){
+		flex-direction: row;
+	}
+	&__left-side-bar{
+		border-top-left-radius: 16px;
+		border-top-right-radius: 16px;
+		background-color: #f4f4f4;
+		flex-basis: 526px;
+		flex-grow: 0;
+		padding: 15px;
+		@include from(1024px){
+			padding: 72px;
+		}
+	}
+	&__content{
+		border: 1px solid blue;
+		width: 100%;
+		padding: 15px;
+		@include from(1024px){
+			margin-left: 19px;
+		}
+	}
+	&__content-title{
+		color: var(--Color-Alias-Text-Primary, #192666);
+		/* Desktop/Heading/Heading2 */
+		font-family: Montserrat;
+		font-size: 45px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%; /* 54px */
+		letter-spacing: -0.45px;
+	}
+	&__content-grid{
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 50px;    /* Gap superior e inferior de 50px */
+		column-gap: 25px; /* Gap lateral de 25px */
+	}
+	&__content-grid-item{
+		border: 1px solid green;
+		border-radius: 16px;
+		overflow: hidden;
+		width: 100%;
+		padding-bottom: 15px;
+		@include from(640px){
+			width: calc(50% - 15px);
+		}
+		@include from(l){
+			width: 100%;
+		}
+		@include from(1200px){
+			width: calc(50% - 15px);
+		}		
+	}
+	&__content-grid-item-img-container{
+		padding-bottom: 10px;
+	}
+	&__content-grid-item-img{
+		width: 100%;
+		height: auto;
+	}
+	&__content-grid-item-title{
+		color: var(--Primary-Light-Blue, var(--Primary-Light-Blue, #0061B0));
+		display: block;
+		/* Desktop/Heading/Heading5 */
+		font-family: Montserrat;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%; /* 31.2px */
+		letter-spacing: -0.26px;
+		padding-bottom: 10px;
+		@include from(m){
+			font-size: 26px;
+		}
+	}
+	&__content-grid-item-sub-title{
+		color: var(--Color-Alias-Text-Default, #515151);
+		font-family: Montserrat;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 120%; /* 24px */
+		letter-spacing: -0.2px;
+	}
+	
+}
+
+.video-filter-slider{
+	border: 1px solid red;
+	&__item{
+		border: 1px solid blue;
+		width: 288px !important;
+		@include from(l){
+			margin-bottom: 15px;
+		}
+	}
+	@include from(l){
+		> .swiper-wrapper{
+			flex-direction: column;
+		}
+	}
+	&__img{
+		width: 100%;
+		height: auto;
+	}
+}

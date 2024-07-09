@@ -8,6 +8,10 @@ html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
 	<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 	head
 		include metatags 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 		link(rel="stylesheet" href="./styles.css")
 		title= currentPage.slice(0,1).toUpperCase() + currentPage.slice(1) + " | " + siteName
 	body(class=currentPage, itemscope itemtype="http://schema.org/WebPage")
@@ -23,5 +27,6 @@ html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
 		footer(class='main-footer')
 			block main-footer
 		//- here ends the Main Footer
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		script(src='index-dist.js')
 		block scripts

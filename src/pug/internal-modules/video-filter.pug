@@ -1,1 +1,23 @@
 section(class='video-filter')
+	div(class='video-filter__left-side-bar')
+		div(class='swiper video-filter-slider')
+			div(class='swiper-wrapper')
+				-for(let i = 1; i<=3; i++ )
+					a(class='swiper-slide video-filter-slider__item')
+						img(src="images/thumbnail2.png", class='swiper-slide video-filter-slider__img' alt="video")
+	div(class='video-filter__content')
+		div(class='video-filter__controls')
+			div(class='video-filter__controls-input-container')
+				input(type="text")
+			div(class='video-filter__controls-buttons') lorem
+		div(class='video-filter__content-title-container')
+			h2(class='video-filter__content-title') Lorem, ipsum dolor.
+		div(class='video-filter__content-grid')
+			-for(let i =1; i <=6; i++)
+				div(class='video-filter__content-grid-item')
+					div(class='video-filter__content-grid-item-img-container')
+						img(src="images/thumbnail.png", class='video-filter__content-grid-item-img' alt="")
+					div(class='video-filter__content-grid-item-title-container')
+						span(class='video-filter__content-grid-item-title') 1. Full Cash App + Bitcoin Tutorial
+						span(class='video-filter__content-grid-item-sub-title') Cash App
+			
