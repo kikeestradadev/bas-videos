@@ -622,7 +622,7 @@ ul li {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  padding: 50px 15px 15px 15px;
+  padding: 50px 15px 50px 15px;
 }
 @media screen and (min-width: 1024px) {
   .video-filter__left-side-bar {

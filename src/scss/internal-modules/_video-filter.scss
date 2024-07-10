@@ -20,7 +20,7 @@
 		background-color: #f4f4f4;
 		flex-basis: 210px;
 		flex-grow: 0;
-		padding: 50px 15px 15px 15px;
+		padding: 50px 15px 50px 15px;
 		@include from(1024px){
 			padding: 72px;
 			flex-basis: 526px;
