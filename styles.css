@@ -836,7 +836,7 @@ ul li {
   }
 }
 .video-filter__controls-button {
-  min-width: 118px;
+  min-width: 136px;
   height: 49px;
   color: #004793;
   /* Desktop/Heading/Bold/Heading6 */
@@ -850,6 +850,16 @@ ul li {
   border: 1px solid #004793;
   padding: 0 15px;
   text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .video-filter__controls-button {
+    min-width: 141px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .video-filter__controls-button {
+    min-width: 118px;
+  }
 }
 .video-filter__controls-button.active {
   position: relative;
