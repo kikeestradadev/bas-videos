@@ -650,7 +650,12 @@ ul li {
 }
 .video-filter__content {
   width: 100%;
-  padding: 15px;
+  padding: 15px 15px 15px 15px;
+}
+@media screen and (min-width: 1024px) {
+  .video-filter__content {
+    padding: 0 15px 15px 15px;
+  }
 }
 .video-filter__content-title {
   color: var(--Color-Alias-Text-Primary, #192666);
