@@ -18,6 +18,9 @@
 		width: 100%;
 		@include from(lg){
 			width: 40%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}		
 	}
 	&__container-item:nth-child(2){

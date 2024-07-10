@@ -5,7 +5,9 @@ import coreModule from './core-modules/coreModule';
 /*here start internal layout ui components scripts imports*/
 import internalModule from './internal-modules/internalModule';
 import videoFilterSlider from './internal-modules/videoFilterSlider';
+import buttonFilterSlider from './internal-modules/buttonFilterSlider';
 import { setupInputFilter, setupButtonFilters } from './internal-modules/searchFilter';
+
 /*here finish internal layout ui components scripts imports*/
 
 (() => {
@@ -13,6 +15,7 @@ import { setupInputFilter, setupButtonFilters } from './internal-modules/searchF
     coreModule();
 	internalModule();
 	videoFilterSlider();
+	buttonFilterSlider();
 	document.addEventListener('DOMContentLoaded', () => {
 		setupInputFilter();
 		setupButtonFilters();

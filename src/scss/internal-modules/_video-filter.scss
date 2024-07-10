@@ -1,5 +1,5 @@
 .video-filter{
-	padding: 160px 0;
+	padding: 60px 0;
 	// border: 1px solid red;
 	width: 100%;
 	max-width: 1620px;
@@ -7,8 +7,12 @@
 	display: flex;
 	flex-direction: column-reverse;
 	justify-content: space-between;
+	@include from(m){
+		padding: 80px 0;
+	}
 	@include from(1024px){
 		flex-direction: row;
+		padding: 160px 0;
 	}
 	&__left-side-bar{
 		border-top-left-radius: 16px;
@@ -33,17 +37,23 @@
 	&__content-title{
 		color: var(--Color-Alias-Text-Primary, #192666);
 		font-family: Montserrat;
-		font-size: 45px;
+		font-size: 26px;
 		font-style: normal;
 		font-weight: 700;
 		line-height: 120%; /* 54px */
 		letter-spacing: -0.45px;
+		@include from(m){
+			font-size: 45px;
+		}
 	}
 	&__content-grid{
 		display: flex;
 		flex-wrap: wrap;
-		row-gap: 50px;
+		row-gap: 0;
 		column-gap: 25px;
+		@include from(lg){
+			row-gap: 50px;
+		}
 	}
 	&__content-grid-item{
 		// border: 1px solid green;
@@ -73,12 +83,15 @@
 		display: block;
 		/* Desktop/Heading/Heading5 */
 		font-family: Montserrat;
-		font-size: 20px;
+		font-size: 16px;
 		font-style: normal;
 		font-weight: 700;
 		line-height: 120%; /* 31.2px */
 		letter-spacing: -0.26px;
 		padding-bottom: 10px;
+		@include from(480px){
+			font-size: 22px;
+		}
 		@include from(m){
 			font-size: 26px;
 		}
@@ -97,8 +110,16 @@
 	}
 	&__controls-input-container > img{
 		position: absolute;
-		width: 56px;
-		height: 56px;
+		width: 35px;
+		height: 35px;
+		left: 5px;
+		top: 12px;
+		@include from(m){
+			left: 0;
+			top: 0;
+			width: 56px;
+			height: 56px;
+		}
 	}
 	&__controls-input{
 		height: 56px;
@@ -120,16 +141,22 @@
 	&__controls-input::placeholder {
 		color: var(--Label-Colors-LC-L-Secondary, rgba(60, 60, 67, 0.60));
 		font-family: Montserrat;
-		font-size: 24px;
+		font-size: 20px;
 		font-style: normal;
 		font-weight: 500;
 		line-height: 180%; /* 43.2px */
 		letter-spacing: -0.24px;
 		text-transform: capitalize;
+		@include from(m){
+			font-size: 24px;
+		}
 	}
 	&__controls-buttons{
 		padding-top: 30px;
-		padding-bottom: 120px;
+		padding-bottom: 30px;
+		@include from(m){
+			padding-bottom: 120px;
+		}
 	}
 	&__controls-button{
 		min-width: 118px;
@@ -146,7 +173,6 @@
 		border: 1px solid #004793;
 		padding: 0 15px;
 		text-transform: uppercase;
-		margin-right:15px;
 		&.active{
 			position: relative;
 			background-color: #004793;
@@ -172,7 +198,12 @@
 		
 	}
 }
-
+.video-filter-buttons-slider{
+	padding: 24px 0 60px 0;
+	&__item{
+		width: auto;
+	}
+}
 .video-filter-slider{
 	// border: 1px solid red;
 	&__item{
