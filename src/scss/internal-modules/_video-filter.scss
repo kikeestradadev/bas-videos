@@ -14,11 +14,12 @@
 		border-top-left-radius: 16px;
 		border-top-right-radius: 16px;
 		background-color: #f4f4f4;
-		flex-basis: 526px;
+		flex-basis: 210px;
 		flex-grow: 0;
 		padding: 15px;
 		@include from(1024px){
 			padding: 72px;
+			flex-basis: 526px;
 		}
 	}
 	&__content{
