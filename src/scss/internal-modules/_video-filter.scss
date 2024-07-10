@@ -20,10 +20,26 @@
 		background-color: #f4f4f4;
 		flex-basis: 210px;
 		flex-grow: 0;
-		padding: 15px;
+		padding: 50px 15px 15px 15px;
 		@include from(1024px){
 			padding: 72px;
 			flex-basis: 526px;
+			padding: 15px 15px 15px 15px;
+		}
+	}
+	&__left-side-bar__title{
+		color: var(--Primary-Dark-Blue, var(--Primary-Dark-Blue, #192666));
+
+		/* Desktop/Heading/Heading3 */
+		font-family: Montserrat;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%; /* 44.4px */
+		letter-spacing: -0.37px;
+		padding-bottom: 40px;
+		@include from(lg){
+			font-size: 37px;
 		}
 	}
 	&__content{
