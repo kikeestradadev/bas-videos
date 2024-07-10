@@ -886,7 +886,7 @@ ul li {
 }
 .video-filter__controls-button.active::before {
   content: "";
-  background: url("images/check.svg") no-repeat;
+  background: url("https://img.betanysports.eu/landing/videos/check.svg") no-repeat;
   background-size: contain;
   position: absolute;
   background-size: contain;
