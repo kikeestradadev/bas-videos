@@ -478,8 +478,8 @@ ul li {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   background-color: #f4f4f4;
-  -ms-flex-preferred-size: 526px;
-      flex-basis: 526px;
+  -ms-flex-preferred-size: 210px;
+      flex-basis: 210px;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -488,6 +488,8 @@ ul li {
 @media screen and (min-width: 1024px) {
   .video-filter__left-side-bar {
     padding: 72px;
+    -ms-flex-preferred-size: 526px;
+        flex-basis: 526px;
   }
 }
 .video-filter__content {
