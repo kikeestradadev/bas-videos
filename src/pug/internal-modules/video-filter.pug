@@ -3,13 +3,16 @@ section(class='video-filter')
 		div(class='swiper video-filter-slider')
 			div(class='swiper-wrapper')
 				-for(let i = 1; i<=3; i++ )
-					a(class='swiper-slide video-filter-slider__item')
+					div(class='swiper-slide video-filter-slider__item')
 						img(src="images/thumbnail2.png", class='swiper-slide video-filter-slider__img' alt="video")
 	div(class='video-filter__content')
 		div(class='video-filter__controls')
 			div(class='video-filter__controls-input-container')
-				input(type="text")
-			div(class='video-filter__controls-buttons') lorem
+				input(type="text", class='video-filter__controls-input')
+			div(class='video-filter__controls-buttons')
+				button(class='video-filter__controls-button') lorem
+				button(class='video-filter__controls-button') lorem
+				button(class='video-filter__controls-button') lorem
 		div(class='video-filter__content-title-container')
 			h2(class='video-filter__content-title') Lorem, ipsum dolor.
 		div(class='video-filter__content-grid')

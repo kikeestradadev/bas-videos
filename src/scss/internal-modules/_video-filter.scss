@@ -1,6 +1,6 @@
 .video-filter{
-	padding-top: 160px;
-	border: 1px solid red;
+	padding: 160px 0;
+	// border: 1px solid red;
 	width: 100%;
 	max-width: 1620px;
 	margin: 0 auto;
@@ -22,7 +22,7 @@
 		}
 	}
 	&__content{
-		border: 1px solid blue;
+		// border: 1px solid blue;
 		width: 100%;
 		padding: 15px;
 		@include from(1024px){
@@ -31,7 +31,6 @@
 	}
 	&__content-title{
 		color: var(--Color-Alias-Text-Primary, #192666);
-		/* Desktop/Heading/Heading2 */
 		font-family: Montserrat;
 		font-size: 45px;
 		font-style: normal;
@@ -42,11 +41,11 @@
 	&__content-grid{
 		display: flex;
 		flex-wrap: wrap;
-		row-gap: 50px;    /* Gap superior e inferior de 50px */
-		column-gap: 25px; /* Gap lateral de 25px */
+		row-gap: 50px;
+		column-gap: 25px;
 	}
 	&__content-grid-item{
-		border: 1px solid green;
+		// border: 1px solid green;
 		border-radius: 16px;
 		overflow: hidden;
 		width: 100%;
@@ -92,13 +91,46 @@
 		line-height: 120%; /* 24px */
 		letter-spacing: -0.2px;
 	}
-	
+	&__controls-input{
+		height: 56px;
+		width: 100%;
+		border-radius: 16px;
+		// border: 1px solid #dddddd;
+		padding: 0 15px;
+		font-family: Montserrat;
+	}	
+	&__controls-buttons{
+		padding-top: 30px;
+		padding-bottom: 120px;
+	}
+	&__controls-button{
+		width: 118px;
+		height: 49px;
+		color: #004793;
+		/* Desktop/Heading/Bold/Heading6 */
+		font-family: Montserrat;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 160%; /* 28.8px */
+		letter-spacing: -0.36px;
+		border-radius: 16px;
+		// border: 1px solid #004793;
+		&.active{
+			background-color: #004793;
+			color: white;
+		}
+	}
+	&__content-title-container{
+		padding-bottom: 30px;
+		
+	}
 }
 
 .video-filter-slider{
-	border: 1px solid red;
+	// border: 1px solid red;
 	&__item{
-		border: 1px solid blue;
+		// border: 1px solid blue;
 		width: 288px !important;
 		@include from(l){
 			margin-bottom: 15px;
