@@ -61,6 +61,81 @@ var videoFilterSlider = function videoFilterSlider() {
 };
 /* harmony default export */ __webpack_exports__["default"] = (videoFilterSlider);
 
+/***/ }),
+/* 4 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+var setupInputFilter = function setupInputFilter() {
+  var fnFilter = function fnFilter(inputElement, selectorContainer) {
+    inputElement.addEventListener('keyup', function (e) {
+      if (e.key === 'Escape') e.target.value = '';
+      fnCompareElements(e.target.value.toUpperCase(), selectorContainer);
+    });
+  };
+  var fnCompareElements = function fnCompareElements(filterText, selectorContainer) {
+    var searchContainers = document.querySelectorAll(selectorContainer);
+    searchContainers.forEach(function (container) {
+      var title = container.querySelector('.video-filter__content-grid-item-title');
+      var subTitle = container.querySelector('.video-filter__content-grid-item-sub-title');
+      var textContent = '';
+      if (title) textContent += title.textContent.toUpperCase() + ' ';
+      if (subTitle) textContent += subTitle.textContent.toUpperCase();
+      var searchTerms = filterText.split(' '); // Divide el texto en palabras separadas por espacios
+
+      // Verificar si todas las palabras de búsqueda están presentes en el contenido del texto
+      var isMatch = searchTerms.every(function (term) {
+        return textContent.includes(term);
+      });
+      if (isMatch) {
+        container.style.display = 'block';
+      } else {
+        container.style.display = 'none';
+      }
+    });
+  };
+  var inputElement = document.querySelector('.video-filter__controls-input');
+  if (inputElement) {
+    fnFilter(inputElement, '.video-filter__content-grid-item');
+  } else {
+    console.error('Input element with class "video-filter__controls-input" not found.');
+  }
+};
+var setupButtonFilters = function setupButtonFilters() {
+  var filterSelection = function filterSelection(c) {
+    var items = document.querySelectorAll('.video-filter__content-grid-item');
+    if (c === 'all') c = '';
+    items.forEach(function (item) {
+      item.style.display = item.className.indexOf(c) > -1 ? 'block' : 'none';
+    });
+  };
+  var btnContainer = document.getElementById('myBtnContainer');
+  if (!btnContainer) {
+    console.error('Button container with id "myBtnContainer" not found.');
+    return;
+  }
+  var btns = btnContainer.getElementsByClassName('video-filter__controls-button');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function () {
+      var current = document.getElementsByClassName('active');
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(' active', '');
+      }
+      this.className += ' active';
+      filterSelection(this.getAttribute('data-filter'));
+    });
+  }
+};
+document.addEventListener('DOMContentLoaded', function () {
+  setupInputFilter();
+  setupButtonFilters();
+  filterSelection('all'); // Show all items by default
+});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  setupInputFilter: setupInputFilter,
+  setupButtonFilters: setupButtonFilters
+});
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -108,6 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /*here start core layout ui scripts imports*/
 
 /*here finish core layout ui scripts imports*/
@@ -115,12 +191,15 @@ __webpack_require__.r(__webpack_exports__);
 /*here start internal layout ui components scripts imports*/
 
 
+
 /*here finish internal layout ui components scripts imports*/
 
 (function () {
   /*here start core layout ui scripts functions*/
   (0,_core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_3__["default"])();
   /*here finish core layout ui scripts functions*/
 })();
 (function () {})();

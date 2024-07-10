@@ -92,20 +92,47 @@
 		line-height: 120%; /* 24px */
 		letter-spacing: -0.2px;
 	}
+	&__controls-input-container{
+		position: relative;
+	}
+	&__controls-input-container > img{
+		position: absolute;
+		width: 56px;
+		height: 56px;
+	}
 	&__controls-input{
 		height: 56px;
 		width: 100%;
 		border-radius: 16px;
-		// border: 1px solid #dddddd;
-		padding: 0 15px;
+		border: 1px solid #dddddd;
+		padding: 0 15px 0 50px;
 		font-family: Montserrat;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 180%; /* 43.2px */
+		letter-spacing: -0.24px;
+		&:focus {
+			border-color: #dddddd;
+			outline: none; /* Elimina el borde azul predeterminado en algunos navegadores */
+		}
 	}	
+	&__controls-input::placeholder {
+		color: var(--Label-Colors-LC-L-Secondary, rgba(60, 60, 67, 0.60));
+		font-family: Montserrat;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 180%; /* 43.2px */
+		letter-spacing: -0.24px;
+		text-transform: capitalize;
+	}
 	&__controls-buttons{
 		padding-top: 30px;
 		padding-bottom: 120px;
 	}
 	&__controls-button{
-		width: 118px;
+		min-width: 118px;
 		height: 49px;
 		color: #004793;
 		/* Desktop/Heading/Bold/Heading6 */
@@ -116,10 +143,28 @@
 		line-height: 160%; /* 28.8px */
 		letter-spacing: -0.36px;
 		border-radius: 16px;
-		// border: 1px solid #004793;
+		border: 1px solid #004793;
+		padding: 0 15px;
+		text-transform: uppercase;
+		margin-right:15px;
 		&.active{
+			position: relative;
 			background-color: #004793;
 			color: white;
+			padding-left: 35px;
+			&::before{
+				content: "";
+				background: url('images/check.svg') no-repeat ;
+				background-size: contain;
+				position: absolute;
+				background-size: contain;
+				position: absolute;
+				left: 10px; /* Ajusta la posición del SVG según tus necesidades */
+				top: 50%;
+				transform: translateY(-50%);
+				width: 24px; /* Ajusta el tamaño del SVG según tus necesidades */
+				height: 24px;
+			}
 		}
 	}
 	&__content-title-container{
