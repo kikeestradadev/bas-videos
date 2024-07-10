@@ -941,7 +941,6 @@ ul li {
 /*here finish de website internal components modules*/
 /*here start the hacks section*/
 .video-filter-modal {
-  border: 4px solid red;
   max-width: 1200px !important;
   padding: 0 15px;
 }
