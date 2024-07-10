@@ -159,7 +159,7 @@
 		}
 	}
 	&__controls-button{
-		min-width: 118px;
+		min-width: 136px;
 		height: 49px;
 		color: #004793;
 		/* Desktop/Heading/Bold/Heading6 */
@@ -173,6 +173,12 @@
 		border: 1px solid #004793;
 		padding: 0 15px;
 		text-transform: uppercase;
+		@include from(m){
+			min-width: 141px;
+		}
+		@include from(lg){
+			min-width: 118px;
+		}
 		&.active{
 			position: relative;
 			background-color: #004793;
