@@ -66,10 +66,32 @@ var videoFilterSlider = function videoFilterSlider() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setupButtonFilters: function() { return /* binding */ setupButtonFilters; },
+/* harmony export */   setupInputFilter: function() { return /* binding */ setupInputFilter; }
+/* harmony export */ });
+var filterSelection = function filterSelection(c) {
+  // Limpiar el input cuando se selecciona un botón
+  var inputElement = document.querySelector('.video-filter__controls-input');
+  if (inputElement) {
+    inputElement.value = '';
+  }
+  var items = document.querySelectorAll('.video-filter__content-grid-item');
+  if (c === 'all') c = '';
+  items.forEach(function (item) {
+    item.style.display = item.className.indexOf(c) > -1 ? 'block' : 'none';
+  });
+};
 var setupInputFilter = function setupInputFilter() {
   var fnFilter = function fnFilter(inputElement, selectorContainer) {
     inputElement.addEventListener('keyup', function (e) {
       if (e.key === 'Escape') e.target.value = '';
+
+      // Limpiar la clase activa de los botones cuando se usa el input
+      var activeButton = document.querySelector('.video-filter__controls-button.active');
+      if (activeButton) {
+        activeButton.classList.remove('active');
+      }
       fnCompareElements(e.target.value.toUpperCase(), selectorContainer);
     });
   };
@@ -102,13 +124,6 @@ var setupInputFilter = function setupInputFilter() {
   }
 };
 var setupButtonFilters = function setupButtonFilters() {
-  var filterSelection = function filterSelection(c) {
-    var items = document.querySelectorAll('.video-filter__content-grid-item');
-    if (c === 'all') c = '';
-    items.forEach(function (item) {
-      item.style.display = item.className.indexOf(c) > -1 ? 'block' : 'none';
-    });
-  };
   var btnContainer = document.getElementById('myBtnContainer');
   if (!btnContainer) {
     console.error('Button container with id "myBtnContainer" not found.');
@@ -131,10 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupButtonFilters();
   filterSelection('all'); // Show all items by default
 });
-/* harmony default export */ __webpack_exports__["default"] = ({
-  setupInputFilter: setupInputFilter,
-  setupButtonFilters: setupButtonFilters
-});
+
 
 /***/ })
 /******/ 	]);
@@ -164,6 +176,23 @@ document.addEventListener('DOMContentLoaded', function () {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -199,7 +228,10 @@ __webpack_require__.r(__webpack_exports__);
   (0,_core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  document.addEventListener('DOMContentLoaded', function () {
+    (0,_internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_3__.setupInputFilter)();
+    (0,_internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_3__.setupButtonFilters)();
+  });
   /*here finish core layout ui scripts functions*/
 })();
 (function () {})();
