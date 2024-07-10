@@ -473,6 +473,7 @@ ul li {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    min-height: 700px;
   }
 }
 .video-banner__container-item {
@@ -502,6 +503,12 @@ ul li {
 @media screen and (min-width: 1440px) {
   .video-banner__container-item:nth-child(2) {
     width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 .video-banner__container-hero {
