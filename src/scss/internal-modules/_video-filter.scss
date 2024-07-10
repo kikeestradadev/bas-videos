@@ -233,6 +233,7 @@
 		width: 288px !important;
 		@include from(l){
 			margin-bottom: 15px;
+			width: 100% !important;
 		}
 	}
 	@include from(l){
