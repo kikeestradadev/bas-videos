@@ -915,6 +915,7 @@ ul li {
 @media screen and (min-width: 1024px) {
   .video-filter-slider__item {
     margin-bottom: 15px;
+    width: 100% !important;
   }
 }
 @media screen and (min-width: 1024px) {
