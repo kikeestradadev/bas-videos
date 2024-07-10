@@ -6,9 +6,11 @@
 		flex-wrap: wrap;
 		margin: 0 auto;
 		max-width: 1600px;
+		
 		flex-direction: column;
 		@include from(lg){
 			flex-direction: row;
+			min-height: 700px;
 		}
 	}
 	&__container-item{		
@@ -27,6 +29,8 @@
 		width: 100%;
 		@include from(lg){
 			width: 60%;
+			display: flex;
+			align-items: flex-end;
 		}
 	}
 	&__container-hero{
