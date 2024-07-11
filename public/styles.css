@@ -955,12 +955,11 @@ ul li {
 }
 .video-filter-modal__close-modal {
   position: absolute;
-  border: 1px solid white;
   display: block;
   z-index: 1000;
   cursor: pointer;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
 }
 
 .video-filter-modal > .modal-content {

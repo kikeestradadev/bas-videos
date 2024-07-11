@@ -30,6 +30,8 @@ const videoFilterSlider = () => {
 		window.addEventListener('resize', () => {
 			initializeSlider();
 		});
+
+		
 	});
 }
 

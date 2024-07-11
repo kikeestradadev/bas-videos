@@ -77,6 +77,8 @@ const filterSelection = (c) => {
 	}
 	};
 
+	
+
 	document.addEventListener('DOMContentLoaded', () => {
 	setupInputFilter();
 	setupButtonFilters();

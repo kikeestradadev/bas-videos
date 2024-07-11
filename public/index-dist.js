@@ -170,6 +170,51 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/***/ }),
+/* 6 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+var modalClose = function modalClose() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var modals = document.querySelectorAll('.modal');
+    var videos = document.querySelectorAll('video');
+    modals.forEach(function (modal, index) {
+      var video = videos[index];
+      modal.addEventListener('shown.bs.modal', function () {
+        video.muted = false; // Unmute the video
+        video.play();
+      });
+      modal.addEventListener('hidden.bs.modal', function () {
+        video.pause();
+        video.currentTime = 0;
+        video.muted = true; // Mute the video again
+        // Ensure modal-backdrop is removed when modal is closed
+        var backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.parentNode.removeChild(backdrop);
+        }
+
+        // Ensure body overflow is reset when modal is closed
+        document.body.style.overflow = '';
+        document.body.classList.remove('modal-open');
+      });
+    });
+
+    // Add event listeners to the grid items to open modals
+    var gridItems = document.querySelectorAll('.video-filter__content-grid-item');
+    gridItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var target = this.getAttribute('data-bs-target');
+        var modalElement = document.querySelector(target);
+        var modalInstance = new bootstrap.Modal(modalElement);
+        modalInstance.show();
+      });
+    });
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (modalClose);
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -236,11 +281,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _internal_modules_buttonFilterSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _internal_modules_modalClose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /*here start core layout ui scripts imports*/
 
 /*here finish core layout ui scripts imports*/
 
 /*here start internal layout ui components scripts imports*/
+
 
 
 
@@ -254,6 +301,7 @@ __webpack_require__.r(__webpack_exports__);
   (0,_internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_internal_modules_videoFilterSlider__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_internal_modules_buttonFilterSlider__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_internal_modules_modalClose__WEBPACK_IMPORTED_MODULE_5__["default"])();
   document.addEventListener('DOMContentLoaded', function () {
     (0,_internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_4__.setupInputFilter)();
     (0,_internal_modules_searchFilter__WEBPACK_IMPORTED_MODULE_4__.setupButtonFilters)();
