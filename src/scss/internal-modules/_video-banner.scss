@@ -47,20 +47,23 @@
 	&__title{
 		/* Desktop/Display/Display2 */
 		font-family: Montserrat;
-		font-size: 52px;
+		font-size: 60px;
 		line-height: 120%; /* 93px */
 		font-style: normal;
 		font-weight: 800;
 		margin: 0 auto;
-		max-width: 260px;		
+		max-width: 300px;		
 		letter-spacing: -0.93px;		
 		background: var(--Gradient-Gold-NEW-AA, linear-gradient(97deg, #E0AC42 5.53%, #E0AC42 5.53%, #EED688 28.91%, #FFFBCC 55.82%, #E0AC42 93.77%));
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		padding-top: 50px;
-		@include from(m){
-			
+		@include from(sm){
+			max-width: 350px;
+			font-size: 70px;
+		}
+		@include from(m){			
 			font-size: 93px;
 			line-height: 120%; /* 93px */
 			text-align: center;
