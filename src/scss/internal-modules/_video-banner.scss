@@ -58,7 +58,9 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+		padding-top: 50px;
 		@include from(m){
+			
 			font-size: 93px;
 			line-height: 120%; /* 93px */
 			text-align: center;
@@ -66,8 +68,10 @@
 		}
 		@include from(l){
 			max-width: 100%;
+			
 		}
 		@include from(lg){
+			padding-top: 0;
 			text-align: left;
 		}
 	}
