@@ -690,6 +690,7 @@ ul li {
   }
 }
 .video-filter__content-grid-item {
+  cursor: pointer;
   border-radius: 16px;
   overflow: hidden;
   width: 100%;
@@ -917,6 +918,7 @@ ul li {
 }
 
 .video-filter-slider__item {
+  cursor: pointer;
   width: 288px !important;
 }
 @media screen and (min-width: 1024px) {
@@ -943,6 +945,33 @@ ul li {
 .video-filter-modal {
   max-width: 1200px !important;
   padding: 0 15px;
+}
+.video-filter-modal__header {
+  position: absolute;
+  background-color: transparent !important;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+}
+.video-filter-modal__close-modal {
+  position: absolute;
+  border: 1px solid white;
+  display: block;
+  z-index: 1000;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+
+.video-filter-modal > .modal-content {
+  background-color: transparent !important;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-filter-modal > .modal-content > .modal-body {
+  padding: 0 !important;
+  position: relative;
 }
 
 .video-filter-modal > .modal-body > iframe {
