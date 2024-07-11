@@ -76,6 +76,7 @@
 		}
 	}
 	&__content-grid-item{
+		cursor: pointer;
 		// border: 1px solid green;
 		border-radius: 16px;
 		overflow: hidden;
@@ -234,6 +235,7 @@
 	// border: 1px solid red;
 	&__item{
 		// border: 1px solid blue;
+		cursor: pointer;
 		width: 288px !important;
 		@include from(l){
 			margin-bottom: 15px;
